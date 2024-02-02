@@ -33,30 +33,5 @@ def verificar_tipo_forma(forma):
     formas_tridimensionais = ["cilindro", "esfera", "cubo", "paralelepipedo"]
     return "bidimensional" if forma in formas_bidimensionais else "tridimensional" if forma in formas_tridimensionais else "Forma não reconhecida"
 
-def main():
-    forma = input("Digite a forma geométrica: ").lower()
-    tipo_forma = verificar_tipo_forma(forma)
-
-    if tipo_forma == "bidimensional":
-        if forma in ["quadrado", "retangulo", "triangulo", "circulo"]:
-            args = tuple(map(float, input(f"Digite os valores para {forma} separados por espaço: ").split()))
-            area, _ = calcular_area_volume(forma, *args)
-            print(f"A área do {forma} é: {area}")
-    elif tipo_forma == "tridimensional":
-        if forma in ["cilindro", "esfera", "cubo", "paralelepipedo"]:
-            args = tuple(map(float, input(f"Digite os valores para {forma} separados por espaço: ").split()))
-            resultados = calcular_area_volume(forma, *args)
-            if len(resultados) == 2:
-                area, volume = resultados
-                print(f"A área da superfície do {forma} é: {area}")
-                print(f"O volume do {forma} é: {volume}")
-            else:
-                area_lateral, area_total, volume = resultados
-                print(f"A área lateral do {forma} é: {area_lateral}")
-                print(f"A área total do {forma} é: {area_total}")
-                print(f"O volume do {forma} é: {volume}")
-    else:
-        print("Forma não reconhecida")
-
 if __name__ == "__main__":
-    main()
+    print("Este é o módulo geometric_shapes. Ele fornece funções para calcular áreas e volumes de formas geométricas.")
